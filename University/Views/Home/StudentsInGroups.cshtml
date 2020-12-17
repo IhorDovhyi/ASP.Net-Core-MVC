@@ -1,0 +1,15 @@
+﻿@model IEnumerable<University.Models.Student>
+@{
+    ViewBag.Title = "StudensInGroups";
+}
+<table class="table">
+    <tr><td><b>First Name</b></td><td><b>Last Name</b></td></tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.FirstName</td>
+        <td>@item.LastName</td>
+        <td><a asp-action="EditStudent" asp-controller="Home" asp-route-id="@item.StudentId">Edit Student</a></td>
+    </tr>
+    }
+</table>

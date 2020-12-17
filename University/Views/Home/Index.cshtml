@@ -1,0 +1,12 @@
+﻿@model IEnumerable<University.Models.Course>
+@{
+    ViewBag.Title = "Index";
+}
+<table class="table">
+    <tr><td><b>Course</b></td><td><b>Description</b></td></tr>
+    @foreach (var item in Model)
+    {
+        <tr><td><a asp-action="GroupsInCourse" asp-controller="Home" asp-route-id="@item.CourseId">@item.Name</a></td>
+        <td>@item.Description</td></tr>
+    }
+</table>
